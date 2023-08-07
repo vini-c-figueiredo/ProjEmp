@@ -1,0 +1,7 @@
+-- CreateTable
+CREATE TABLE "QtdDias" (
+    "id" SERIAL NOT NULL,
+    "dtaIda" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "QtdDias_pkey" PRIMARY KEY ("id")
+);
