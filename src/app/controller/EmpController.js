@@ -4,10 +4,7 @@ const ServiceCrypt = require('../Services/Crypt');
 
 class EmpController {
     async create(request, response) {
-        const { username, password } = request.body;
-        const hashedPassword = await UserRepository.Find(username);
-
-        const log = await ServiceCrypt.Descrypto(password, hashedPassword);
+        const { token } = request.body;
 
 
         const New = await EmpRepository.Create();

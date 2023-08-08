@@ -1,4 +1,4 @@
-const UserRepository = require('../Repositories/ UserRepository');
+const UserRepository = require('../Repositories/UserRepository');
 const bcrypt = require('bcrypt');
 
 class Crypt {

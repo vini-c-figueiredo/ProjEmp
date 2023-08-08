@@ -6,7 +6,8 @@ class UserRepository {
     async Find(username) {
         const hashedPassword = await prisma.user.findMany({
             select: {
-                password: true
+                password: true,
+                id: true
             },
             where:{
                 user: username
@@ -18,7 +19,7 @@ class UserRepository {
     }
 
     async Create(username, password) {
-        const NewUser = await prisma.user.Create({
+        const NewUser = await prisma.user.create({
             data: {
                 user: username,
                 password: password
