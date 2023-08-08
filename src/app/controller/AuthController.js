@@ -19,7 +19,7 @@ class Auth {
             return response.status(404).json({ error:'Login invalid!' });
         }
 
-        const token = jwt.sign({ id: hashedPassword.id }, Secret, {expiresIn: 500});
+        const token = jwt.sign({ id: hashedPassword.id }, Secret, {expiresIn: 70});
 
         return response.json({Auth: true, token});
 
