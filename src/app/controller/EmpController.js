@@ -8,7 +8,7 @@ class EmpController {
 
 
         const New = await EmpRepository.Create();
-        response.json(New);
+        return response.json(New);
 
 
     }
@@ -19,7 +19,7 @@ class EmpController {
 
 
         const Tot = await EmpRepository.FindAll();
-        response.json(Tot);
+        return response.json(Tot);
 
 
     }
@@ -30,7 +30,7 @@ class EmpController {
 
 
         const del = await EmpRepository.delete();
-        response.json(del);
+        return response.json(del);
 
 
     }
