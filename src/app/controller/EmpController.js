@@ -4,9 +4,7 @@ const ServiceCrypt = require('../Services/Crypt');
 
 class EmpController {
     async create(request, response) {
-        const { token } = request.headers;
-
-
+        
         const New = await EmpRepository.Create();
         return response.json(New);
 
@@ -14,20 +12,17 @@ class EmpController {
     }
 
     async index(request, response) {
-        const { token } = request.headers;
-
-
 
         const Tot = await EmpRepository.FindAll();
-        return response.json(Tot);
+        const json = {
+            count: Tot
+        };
+        return response.json(json);
 
 
     }
 
     async delete(request, response) {
-        const { token } = request.headers;
-
-
 
         const del = await EmpRepository.delete();
         return response.json(del);
