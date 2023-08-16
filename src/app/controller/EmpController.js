@@ -14,7 +14,7 @@ class EmpController {
     async index(request, response) {
 
         const Tot = await EmpRepository.FindAll();
-        return Tot;
+        return response.json(Tot);
 
 
     }
