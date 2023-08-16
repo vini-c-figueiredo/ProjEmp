@@ -4,7 +4,7 @@ const ServiceCrypt = require('../Services/Crypt');
 
 class EmpController {
     async create(request, response) {
-        
+
         const New = await EmpRepository.Create();
         return response.json(New);
 
@@ -14,10 +14,7 @@ class EmpController {
     async index(request, response) {
 
         const Tot = await EmpRepository.FindAll();
-        const json = {
-            count: Tot
-        };
-        return response.json(json);
+        return response.send(Tot);
 
 
     }
