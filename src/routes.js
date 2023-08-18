@@ -3,10 +3,14 @@ const { Router } = require('express');
 const EmpController = require('./app/controller/EmpController');
 const UserController = require('./app/controller/UserController');
 const AuthController = require('./app/controller/AuthController');
+const PingController = require('./app/controller/PingController');
 const JWT = require('./app/middleware/VerifyJWT');
 
 
 const router = Router();
+
+//ping
+router.get('/ping', PingController.ping);
 
 //Auth
 router.get('/Auth', AuthController.Token);
