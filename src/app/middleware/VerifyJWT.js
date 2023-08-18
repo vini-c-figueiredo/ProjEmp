@@ -4,7 +4,7 @@ require('dotenv').config();
 class AuthJWT {
     async verify(request, response, next) {
         const Secret = process.env.Secret;
-        const { token } = request.body;
+        const token = request.headers['x-access-token'];;
         console.log(token);
         jwt.verify(token, Secret, (err, decoded ) => {
             if(err) {
