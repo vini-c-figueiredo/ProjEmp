@@ -9,7 +9,6 @@ class EmpRepository {
             "count": QtdTot,
             "ok": true
         };
-        console.log(json);
         return json
 
     }
@@ -18,14 +17,12 @@ class EmpRepository {
         const New = await prisma.QtdDias.create({
             data: {}
         });
-        console.log(New);
         return New
 
     }
 
     async delete() {
         const DelTot = await prisma.QtdDias.deleteMany();
-        console.log(DelTot);
         return DelTot
 
     }
